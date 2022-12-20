@@ -96,7 +96,7 @@ public class Main {
                         System.out.println("Perimetro trapecio: " + trapecio1.getPerimetro());
                     }
                     break;
-                case 2: //Caso para calcular los perimetros
+                case 2: //Caso de salida
                     salir = true;
                     break;
                 default:
