@@ -6,20 +6,23 @@ public class Main {
     public static void main(String[] args) {
         //Captura de datos
         Scanner entrada = new Scanner(System.in);
-        Menu3d menu_de_figuras3d = new Menu3d();
-        int op3d = menu_de_figuras3d.menu_figuras3d(); //menú de figuras de tres dimensiones
 
-        //Menu
-        /*
+        //Menu de figuras 2 dimensiones
         Menus menu_de_figuras = new Menus();
         Menus menu_de_opciones = new Menus();
-        //Variables
-        int op_figuras = 0;
-        boolean salir = false;
+        int op_figuras ;//recibe opción de figuras 2d
+
+        //Menu de figuras 3 dimensiones
+        Menu3d menu_de_figuras3d = new Menu3d();
+        int op3d ; //recibe opción de figuras 3d
+
+        double r,h,b,l; // variables temporales para figuras 3 dimensiones
+
+        boolean salir = false;//variable para salir del bucle while
         while (!salir) {
             switch (menu_de_opciones.menu()) {
                 case 1: //Caso para calcular las careas
-                    op_figuras = menu_de_figuras.menu_figuras();
+                    op_figuras = menu_de_figuras.menu_figuras(); //recibe opción de figuras 2d
                     if (op_figuras == 1) {
                         System.out.println("Ingrese las dimenciones del cuadrado");
                         double lados = entrada.nextDouble();
@@ -103,123 +106,113 @@ public class Main {
                     }
                     break;
                 case 2: //Caso de salida
+                    op3d = menu_de_figuras3d.menu_figuras3d();//recibe opción de figuras 3d
+
+                    if (op3d == 1) { // Calcular cilindro
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese radio: ");
+                        r = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        Cilindro cilindro = new Cilindro(r,h);
+                        System.out.println(cilindro.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 2) { // Calcular Esfera
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese radio: ");
+                        r = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        Esfera esfera = new Esfera(r,h);
+                        System.out.println(esfera.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 3) {//Calcular Cono
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese radio: ");
+                        r = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        Cono cono = new Cono(r,h);
+                        System.out.println(cono.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 4) {// Calcular Cubo
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        Cubo cubo = new Cubo(l);
+                        System.out.println(cubo.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 5) {
+                        // Calcular Octaedro
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        Octaedro octaedro = new Octaedro(l);
+                        System.out.println(octaedro.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 6) {// Calcular Piramide Cuadrangular
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        PiramideCuadrangular PiCuadrangular = new PiramideCuadrangular(l,h);
+                        System.out.println(PiCuadrangular.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 7) {//Calcular Prisma Hexagonal
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        PrismaHexagonal PHexagonal = new PrismaHexagonal(l,h);
+                        System.out.println(PHexagonal.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 8) {// Calcular Prisma Triangular
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        PrismaTriangular PTriangular = new PrismaTriangular(l,h);
+                        System.out.println(PTriangular.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 9) {// Calcular Prisma Rectangular
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese lado: ");
+                        l = entrada.nextDouble();
+                        System.out.println("Ingrese altura: ");
+                        h = entrada.nextDouble();
+                        System.out.println("Ingrese base: ");
+                        b = entrada.nextDouble();
+                        PrismaRectangular rectangulo = new PrismaRectangular(l,b,h);
+                        System.out.println(rectangulo.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+
+                    }else if (op3d == 10) {//Calcular Tetraedro
+                        System.out.println("--- --- --- --- --- --- ---");
+                        System.out.println("Ingrese el lado: ");
+                        l = entrada.nextDouble();
+                        Tetraedro tetraedro = new Tetraedro(l);
+                        System.out.println(tetraedro.toString());// llama al método(toString) que imprime los resultados
+                        System.out.println("--- --- --- --- --- --- ---");
+                    }
+                    break;
+                case 3:
                     salir = true;
                     break;
-                default:
-                    System.out.println("-------------------");
-                    System.out.println("| OPCION NO VALIDA|");
-                    System.out.println("-------------------");
             }//Fin switch
         }//Fin while
         System.out.println("-------------------------");
         System.out.println("| GRACIAS, VUELVA PRONTO |");
         System.out.println("-------------------------");
-         */
-        double r,h,b,l; // variables para almacenar los valores ingresados por teclado
-        while (op3d != 0){
-            switch (op3d){
-                case 1: // Calcular cilindro
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese radio: ");
-                    r = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    Cilindro cilindro = new Cilindro(r,h);
-                    System.out.println(cilindro.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 2:  // Calcular Esfera
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese radio: ");
-                    r = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    Esfera esfera = new Esfera(r,h);
-                    System.out.println(esfera.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 3: //Calcular Cono
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese radio: ");
-                    r = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    Cono cono = new Cono(r,h);
-                    System.out.println(cono.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 4: // Calcular Cubo
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    Cubo cubo = new Cubo(l);
-                    System.out.println(cubo.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 5: // Calcular Octaedro
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    Octaedro octaedro = new Octaedro(l);
-                    System.out.println(octaedro.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 6: // Calcular Piramide Cuadrangular
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    PiramideCuadrangular PiCuadrangular = new PiramideCuadrangular(l,h);
-                    System.out.println(PiCuadrangular.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 7: //Calcular Prisma Hexagonal
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    PrismaHexagonal PHexagonal = new PrismaHexagonal(l,h);
-                    System.out.println(PHexagonal.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 8: // Calcular Prisma Triangular
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    PrismaTriangular PTriangular = new PrismaTriangular(l,h);
-                    System.out.println(PTriangular.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 9: // Calcular Prisma Rectangular
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese lado: ");
-                    l = entrada.nextDouble();
-                    System.out.println("Ingrese altura: ");
-                    h = entrada.nextDouble();
-                    System.out.println("Ingrese base: ");
-                    b = entrada.nextDouble();
-                    PrismaRectangular rectangulo = new PrismaRectangular(l,b,h);
-                    System.out.println(rectangulo.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                case 10: //Calcular Tetraedro
-                    System.out.println("--- --- --- --- --- --- ---");
-                    System.out.println("Ingrese el lado: ");
-                    l = entrada.nextDouble();
-                    Tetraedro tetraedro = new Tetraedro(l);
-                    System.out.println(tetraedro.toString());// llama al método(toString) que imprime los resultados
-                    System.out.println("--- --- --- --- --- --- ---");
-                    break;
-                default:
-                    System.out.println("-------------------------");
-                    System.out.println("| GRACIAS, VUELVA PRONTO |");
-                    System.out.println("-------------------------");
-            }//Fin switch
-            op3d = menu_de_figuras3d.menu_figuras3d();
-        }//Fin while
     }
 }

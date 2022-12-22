@@ -9,7 +9,7 @@ public class Menu3d {
         int op;
         do {
             System.out.println("\n----------------------------------");
-            System.out.println("| ESCOJA UNA FIGURA GEOMETRICA 3D|");
+            System.out.println("| ESCOJA UNA FIGURA GEOMETRICA 3D  |");
             System.out.println("----------------------------------");
             System.out.println("---------------------------------------------");
             System.out.println("|     1.- Cilindro                          |");
