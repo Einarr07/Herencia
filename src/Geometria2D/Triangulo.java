@@ -9,15 +9,8 @@ public class Triangulo extends Figuras2D{
         this.lado = this.lado;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
-    public double getBase() {
-        return base;
-    }
-
-    public double getAltura() {
-        return altura;
-    }
-
     @Override
     protected void calcularArea() {
         area = (base * altura) / 2;
@@ -26,5 +19,10 @@ public class Triangulo extends Figuras2D{
     @Override
     protected void calcularPerimetro() {
         perimetro = base + lado + lado;
+    }
+
+    @Override
+    protected void calcularLinea() {
+        linea_transversal = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
     }
 }

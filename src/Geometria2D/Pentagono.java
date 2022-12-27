@@ -8,6 +8,7 @@ public class Pentagono extends Figuras2D{
         this.apotema = apotema;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
     @Override
     protected void calcularArea() {
@@ -17,5 +18,10 @@ public class Pentagono extends Figuras2D{
     @Override
     protected void calcularPerimetro() {
         perimetro = 5 * longitud;
+    }
+
+    @Override
+    protected void calcularLinea() {
+        linea_transversal = (5.0 * (5.0 - 3.0) / 2.0);
     }
 }

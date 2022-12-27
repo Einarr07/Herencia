@@ -24,12 +24,17 @@ public class Main {
                 case 1: //Caso para calcular las careas
                     op_figuras = menu_de_figuras.menu_figuras(); //recibe opción de figuras 2d
                     if (op_figuras == 1) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese las dimenciones del cuadrado");
                         double lados = entrada.nextDouble();
                         Cuadrado cuadrado1 = new Cuadrado(lados); //Cuadrado
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area cuadrado: " + cuadrado1.getArea());
                         System.out.println("Perimetro cuadrado: " + cuadrado1.getPerimetro());
+                        System.out.println("La diagonal del cuadrado es: " + cuadrado1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 2) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese la base del triangulo");
                         double base = entrada.nextDouble();
                         System.out.println("Ingrese la altura del triangulo");
@@ -37,75 +42,121 @@ public class Main {
                         System.out.println("Ingrese el lado del triangulo");
                         double lado = entrada.nextDouble();
                         Triangulo triangulo1 = new Triangulo(base,altura,lado); //Triangulo
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area triangulo: " + triangulo1.getArea());
                         System.out.println("Perimetro triangulo: " + triangulo1.getPerimetro());
+                        System.out.println("La hipotenusa del triangulo es: " + triangulo1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 3) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese la base del rectangulo");
                         double base = entrada.nextDouble();
                         System.out.println("Ingrese la altura del rectangulo");
                         double altura = entrada.nextDouble();
                         Rectangulo rectangulo1 = new Rectangulo(base,altura); //Rectangulo
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area rectangulo: " + rectangulo1.getArea());
                         System.out.println("Perimetro rectangulo: " + rectangulo1.getPerimetro());
+                        System.out.println("La diagonal del rectangulo es: " + rectangulo1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 4) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese el radio del circulo");
                         double radio = entrada.nextDouble();
                         Circulo circulo1 = new Circulo(radio); //Circulo
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area circulo: " + circulo1.getArea());
                         System.out.println("Perimetro circulo: " + circulo1.getPerimetro());
+                        System.out.println("La longitud de la circunferencia es: " + circulo1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 5) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Heptagono regular");
                         System.out.println("Ingrese la longitud del heptagono");
                         double longitud = entrada.nextDouble();
                         System.out.println("Ingrese la aoptema del heptagono");
                         double apotema = entrada.nextDouble();
                         Heptagono heptagono1 = new Heptagono(longitud,apotema); //Heptagono
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area heptagono: " + heptagono1.getArea());
                         System.out.println("Perimetro heptagono: " + heptagono1.getPerimetro());
+                        System.out.println("La cantidad de diagonales del heptagono es: " +
+                                heptagono1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 6) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Hexagono regular");
                         System.out.println("Ingrese la longitud del hexagono");
                         double longitud = entrada.nextDouble();
                         System.out.println("Ingrese el apotema del hexagono");
                         double apotema = entrada.nextDouble();
                         Hexagono hexagono1 = new Hexagono(longitud, apotema); //Hexagono
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area hexagono: " + hexagono1.getArea());
                         System.out.println("Perimetro hexagono: " + hexagono1.getPerimetro());
+                        System.out.println("La cantidad de diagonales del hexagono es: " +
+                                hexagono1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 7) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese la longitud del pentagono");
                         double longitud = entrada.nextDouble();
                         System.out.println("Ingrese el apotema del pentagono");
                         double apotema = entrada.nextDouble();
                         Pentagono pentagono1 = new Pentagono(longitud, apotema); //Pentagono
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area pentagono: " + pentagono1.getArea());
                         System.out.println("Perimetro pentagono: " + pentagono1.getPerimetro());
+                        System.out.println("La cantidad de diagonales del pentagono es: " +
+                                pentagono1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 8) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese la diagonal mayor del rombo");
                         double diagonalMayor = entrada.nextDouble();
                         System.out.println("Ingrese la diagonal menor del rombo");
                         double diagonaMenor = entrada.nextDouble();
-                        Rombo rombo1 = new Rombo(diagonalMayor,diagonaMenor); //Rombo
+                        System.out.println("Ingrese el valor de los lados del rombo");
+                        double ladosRombo = entrada.nextDouble();
+                        Rombo rombo1 = new Rombo(diagonalMayor,diagonaMenor,ladosRombo); //Rombo
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area rombo: " + rombo1.getArea());
                         System.out.println("Perimetro rombo: " + rombo1.getPerimetro());
+                        System.out.println("La diagonal menor es: " + rombo1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 9) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese el radio del semi circulo");
                         double radio = entrada.nextDouble();
                         Semicirculo semi1 = new Semicirculo(radio); //Semicirculo
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area semi circulo: " + semi1.getArea());
                         System.out.println("Perimetro semi circulo: " + semi1.getPerimetro());
+                        System.out.println("La altura del centroide es: " + semi1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     } else if (op_figuras == 10) {
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Ingrese la base MAYOR del trapecio");
                         double baseMayor = entrada.nextDouble();
                         System.out.println("Ingrese la base MENOR del trapecio");
                         double baseMenor = entrada.nextDouble();
-                        System.out.println("Ingrese la alguta del trapecio");
+                        System.out.println("Ingrese la altura del trapecio");
                         double altura = entrada.nextDouble();
-                        Trapecio trapecio1 = new Trapecio(baseMayor, baseMenor,altura); //Trapecio
+                        System.out.println("Ingrese el lado Izquiero del trapecio");
+                        double ladoIz = entrada.nextDouble();
+                        System.out.println("Ingrese el lado derecho del trapecio");
+                        double ladoDr = entrada.nextDouble();
+                        System.out.println("Ingrese el angulo del trapecio");
+                        double angulo = entrada.nextDouble();
+                        Trapecio trapecio1 = new Trapecio(baseMayor, baseMenor,altura, ladoIz, ladoDr, angulo); //Trapecio
+                        System.out.println("--- --- --- --- --- --- ---");
                         System.out.println("Area trapecio: " + trapecio1.getArea());
                         System.out.println("Perimetro trapecio: " + trapecio1.getPerimetro());
+                        System.out.println("Longitud de la diagonal es: " + trapecio1.getLinea_transversal());
+                        System.out.println("--- --- --- --- --- --- ---");
                     }
                     break;
-                case 2: //Caso de salida
+                case 2: //Caso para las figuras 3d
                     op3d = menu_de_figuras3d.menu_figuras3d();//recibe opción de figuras 3d
 
                     if (op3d == 1) { // Calcular cilindro

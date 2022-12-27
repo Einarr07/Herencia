@@ -8,6 +8,7 @@ public class Circulo extends Figuras2D{
         this.radio = radio;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
     @Override
     protected void calcularArea() {
@@ -18,4 +19,10 @@ public class Circulo extends Figuras2D{
     protected void calcularPerimetro() {
         perimetro = 2 * pi * radio;
     }
+
+    @Override
+    protected void calcularLinea() {
+        linea_transversal = radio * pi;
+    }
+
 }

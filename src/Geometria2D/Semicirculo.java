@@ -8,6 +8,7 @@ public class Semicirculo extends  Figuras2D{
         this.radio = radio;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
     @Override
     protected void calcularArea() {
@@ -17,5 +18,10 @@ public class Semicirculo extends  Figuras2D{
     @Override
     protected void calcularPerimetro() {
         perimetro = (pi * radio) + (2 * radio);
+    }
+
+    @Override
+    protected void calcularLinea() {
+      linea_transversal = (4 * radio) / (3 * pi);
     }
 }

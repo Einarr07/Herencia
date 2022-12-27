@@ -7,6 +7,7 @@ public class Cuadrado extends Figuras2D{
         this.lado = lado;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
     @Override
     protected void calcularArea() {
@@ -16,5 +17,10 @@ public class Cuadrado extends Figuras2D{
     @Override
     protected void calcularPerimetro() {
         perimetro = lado*4;
+    }
+
+    @Override
+    protected void calcularLinea() {
+        linea_transversal = Math.sqrt(Math.pow(lado, 2) + Math.pow(lado, 2));
     }
 }

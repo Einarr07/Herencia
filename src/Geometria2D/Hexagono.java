@@ -9,6 +9,7 @@ public class Hexagono extends Figuras2D{
         this.apotema = apotema;
         calcularArea();
         calcularPerimetro();
+        calcularLinea();
     }
     @Override
     protected void calcularArea() {
@@ -18,5 +19,10 @@ public class Hexagono extends Figuras2D{
     @Override
     protected void calcularPerimetro() {
         perimetro = 6 * longitud;
+    }
+
+    @Override
+    protected void calcularLinea() {
+        linea_transversal = (6.0 * (6.0 - 3.0) / 2.0);
     }
 }
